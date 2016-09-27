@@ -1,0 +1,10 @@
+.material-icons {
+	font-size: 40px;
+	padding-top: 20px;
+}
+
+.material-icons.green1{ color: #61dc46; }
+
+section > div {
+	margin: 5px !important;
+}

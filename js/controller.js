@@ -24,7 +24,7 @@ TradeListApp.controller('TradeListCtrl', function ($scope) {
 	  			curs:$scope.curs,
 	  			money:$scope.money
 	  		})
-	  		$scope.money="";
+	  		$scope.money = 0;
 	  		$scope.curs="";
 	  	}
 	  }
@@ -34,18 +34,16 @@ TradeListApp.controller('TradeListCtrl', function ($scope) {
 	    console.log(id);
 	  }
 
-	  $scope.getTotal = function(){
-	      var total = 0;
-	      for(var i = 0; i < $scope.trades.length; i++){
-	          total += trades.money;
-	      }
-	      return total;
-	  }
+	// подсчет итоговой суммы
 
-	  $scope.total = function() {
-	          var total = 0;
-	          angular.forEach($scope.carts, function(item) {
-              total += trades.money;
+	$scope.total = function() {
+	 var total = 0;
+	 angular.forEach($scope.trades, function(trades) {
+	  total += parseInt(trades.money);
+	 });
+	 return total;
+	};
+	          
 });
 
 
